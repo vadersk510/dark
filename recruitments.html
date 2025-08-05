@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Event Recruitments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index-new.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <div class="container">
+        <h1 class="main-heading text-center">Recruitments</h1>
+        
+        <!-- Search and Filter Section -->
+        <div class="search-filter-section">
+            <div class="search-box">
+                <input type="text" id="search-recruitments" placeholder="Search recruitments..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+            <select id="filter-club" class="filter-select">
+                <option value="">All Clubs</option>
+            </select>
+            <select id="sort-recruitments" class="filter-select">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="alphabetical">Alphabetical</option>
+            </select>
+        </div>
+        
+        <div id="recruitment-cards" class="recruitment-grid center-grid">
+            <!-- Recruitment cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Event Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* Base font size */
+        body {
+            font-size: 16px;
+        }
+
+        /* Calendar-specific background gradient */
+        body {
+            background: linear-gradient(90deg, 
+                #0066ff 0%, 
+                rgba(0, 102, 255, 0.8) 20%, 
+                rgba(0, 102, 255, 0.3) 40%, 
+                transparent 50%, 
+                rgba(255, 102, 0, 0.3) 60%, 
+                rgba(255, 102, 0, 0.8) 80%, 
+                #ff6600 100%);
+            background-size: 200% 100%;
+            animation: waveGradient 25s ease-in-out infinite;
+        }
+
+        @keyframes waveGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Center all content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* New event heading with Playfair Display font */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        .event-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #D89C4E, #D769A2, #C67BE6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px rgba(200, 100, 160, 0.3);
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideIn 1.2s ease-out forwards;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .calendar-heading span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLetter 0.8s ease-out forwards;
+        }
+
+        .calendar-heading span:nth-child(1) { animation-delay: 0.1s; }
+        .calendar-heading span:nth-child(2) { animation-delay: 0.2s; }
+        .calendar-heading span:nth-child(3) { animation-delay: 0.3s; }
+        .calendar-heading span:nth-child(4) { animation-delay: 0.4s; }
+        .calendar-heading span:nth-child(5) { animation-delay: 0.5s; }
+        .calendar-heading span:nth-child(6) { animation-delay: 0.6s; }
+        .calendar-heading span:nth-child(7) { animation-delay: 0.7s; }
+        .calendar-heading span:nth-child(8) { animation-delay: 0.8s; }
+        .calendar-heading span:nth-child(9) { animation-delay: 0.9s; }
+        .calendar-heading span:nth-child(10) { animation-delay: 1.0s; }
+        .calendar-heading span:nth-child(11) { animation-delay: 1.1s; }
+        .calendar-heading span:nth-child(12) { animation-delay: 1.2s; }
+        .calendar-heading span:nth-child(13) { animation-delay: 1.3s; }
+
+        @keyframes slideInLetter {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+
+        /* Calendar grid - 3 months per row with proper spacing */
+        #calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* Calendar month styling */
+        .calendar-month {
+            background: rgba(46, 7, 63, 0.18);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(46, 7, 63, 0.10);
+            padding: 18px 10px;
+            min-width: 280px;
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s, background 0.2s;
+            position: relative;
+        }
+
+        /* Month headings with brighter gradient */
+        .calendar-month-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1.5%;
+            background: linear-gradient(180deg, #9B2C63, #3F2566);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(155, 44, 99, 0.7);
+            position: relative;
+        }
+
+
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            width: 100%;
+        }
+
+        .calendar-day {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(235, 211, 248, 0.10);
+            color: #EBD3F8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border: 1px solid transparent;
+        }
+
+        /* Event day styling with more opacity and club color fill */
+        .calendar-day.event-day {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid var(--club-color);
+            background: linear-gradient(135deg, var(--club-color) 0%, var(--club-color) 70%, rgba(255, 255, 255, 0.2) 100%);
+            box-shadow: 
+                0 0 12px var(--club-color),
+                0 0 24px var(--club-color),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-day.event-day::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .calendar-day.event-day:hover {
+            transform: scale(1.1);
+            box-shadow: 
+                0 0 15px var(--club-color),
+                0 0 30px var(--club-color),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            z-index: 3;
+        }
+
+        .calendar-day.event-day:hover::before {
+            left: 100%;
+        }
+
+        .calendar-day.selected {
+            outline: 2.5px solid #7A1CAC;
+            outline-offset: 2px;
+            background: #7A1CAC;
+            box-shadow: 0 0 12px #7A1CAC;
+        }
+
+        .calendar-day:not(.event-day):hover {
+            background: rgba(173, 73, 225, 0.18);
+            color: #AD49E1;
+            transform: scale(1.05);
+        }
+
+        .calendar-day.empty {
+            background: transparent;
+            cursor: default;
+            border: none;
+        }
+
+        /* Calendar controls with circular gradient buttons */
+        #calendar-controls {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        #calendar-controls .neu-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #9B2C63, #3F2566);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 0 15px rgba(155, 44, 99, 0.4),
+                0 0 30px rgba(63, 37, 102, 0.3);
+        }
+
+        #calendar-controls .neu-btn:hover {
+            background: linear-gradient(180deg, #3F2566, #9B2C63);
+            transform: scale(1.1);
+            box-shadow: 
+                0 0 20px rgba(155, 44, 99, 0.6),
+                0 0 40px rgba(63, 37, 102, 0.4);
+        }
+
+        #calendar-year {
+            font-size: 2.8rem;
+            font-weight: 900;
+            min-width: 140px;
+            display: inline-block;
+            text-align: center;
+            background: linear-gradient(180deg, #9B2C63, #3F2566);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(155, 44, 99, 0.7);
+        }
+
+        /* Event Popup Styling */
+        .event-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 45vw;
+            max-width: 450px;
+            min-height: 280px;
+            background: rgba(46, 7, 63, 0.55);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            border: 2px solid rgba(173, 73, 225, 0.2);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(173, 73, 225, 0.1);
+            padding: 20px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .event-popup.show {
+            opacity: 1;
+            visibility: visible;
+            animation: popupFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes popupFloat {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+            50% { transform: translate(-50%, -50%) translateY(-5px); }
+        }
+
+        .event-popup-header {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--club-color), #AD49E1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px var(--club-color);
+        }
+
+        .event-popup-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .event-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #EBD3F8;
+            margin-bottom: 6px;
+            text-shadow: 0 0 3px rgba(235, 211, 248, 0.3);
+        }
+
+        .event-club {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--club-color);
+            text-shadow: 0 0 4px var(--club-color);
+            margin-bottom: 8px;
+        }
+
+        .event-details {
+            font-size: 0.9rem;
+            color: #EBD3F8;
+            opacity: 0.8;
+            line-height: 1.4;
+            text-shadow: 0 0 2px rgba(235, 211, 248, 0.2);
+        }
+
+        .event-links {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .event-link-btn {
+            background: linear-gradient(135deg, var(--club-color), rgba(173, 73, 225, 0.8));
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .event-link-btn:hover {
+            transform: translateY(-1px) scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, rgba(173, 73, 225, 0.9), var(--club-color));
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(220, 53, 69, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .popup-close:hover {
+            background: rgba(220, 53, 69, 1);
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        /* Responsive design */
+        @media (max-width: 900px) {
+            #calendar-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            
+            .event-popup {
+                width: 85vw;
+                max-width: 400px;
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #calendar-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .calendar-month {
+                min-width: 260px;
+            }
+            
+            .calendar-heading {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index-new.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <div class="container">
+        <h1 class="event-heading">Event Calendar</h1>
+        
+        <div id="calendar-controls" class="fade-up" data-delay="0.15">
+            <button class="neu-btn" id="prev-year">&#8592;</button>
+            <span id="calendar-year">2025</span>
+            <button class="neu-btn" id="next-year">&#8594;</button>
+        </div>
+        
+        <div id="calendar-grid" class="fade-up" data-delay="0.2">
+            <!-- Calendar grid will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Event Popup -->
+    <div class="event-popup" id="event-popup">
+        <button class="popup-close" onclick="closeEventPopup()">&times;</button>
+        <div class="event-popup-header" id="popup-header">Events on <span id="popup-date"></span></div>
+        <div class="event-popup-content" id="popup-content">
+            <!-- Event details will be inserted here -->
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Event Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index-new.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center fade-up" data-delay="0.1">Event Feedback</h1>
+        
+        <div class="fade-up" data-delay="0.2" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px;">
+            <div id="club-dropdowns">
+                <h2 class="text-center mb-32">Select Club & Event</h2>
+                <!-- Club dropdowns will be dynamically inserted here -->
+            </div>
+            
+            <div id="feedback-section" class="fade-up" data-delay="0.4">
+                <h2 class="text-center mb-32">Feedback Options</h2>
+                <div id="feedback-form-section" style="display:none;"></div>
+                <div id="see-feedback-section" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html> 

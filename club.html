@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Club Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index-new.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center fade-up" data-delay="0.1">Club Portal</h1>
+        
+        <div id="club-auth" class="fade-up" data-delay="0.2">
+            <div class="glass-card" id="club-auth-card" style="max-width:500px;margin:0 auto;">
+                <h2 id="club-auth-title" class="text-center">Club Login</h2>
+                
+                <form id="club-login-form">
+                    <input type="text" id="club-login-name" placeholder="Club Name" required class="input-field"><br>
+                    <input type="text" id="club-login-code" placeholder="Club Code" required class="input-field"><br>
+                    <button type="submit" class="neu-btn" style="width:100%;margin-top:16px;">Login</button>
+                </form>
+                
+                <div style="margin-top:24px;text-align:center;">
+                    <button id="club-toggle-btn" class="neu-btn" style="background:transparent;border:1px solid #AD49E1;color:#AD49E1;">
+                        Need an account? Sign up
+                    </button>
+                </div>
+                
+                <form id="club-signup-form" style="display:none;">
+                    <input type="text" id="club-signup-name" placeholder="Club Name" required class="input-field"><br>
+                    <select id="club-signup-type" class="input-field" required>
+                        <option value="">Select Club Type</option>
+                        <option value="Technical">Technical</option>
+                        <option value="Non-Technical">Non-Technical</option>
+                    </select><br>
+                    <input type="text" id="club-signup-code" placeholder="Create Club Code" required class="input-field"><br>
+                    <select id="club-signup-color" class="input-field" required>
+                        <option value="">Select Club Color</option>
+                    </select><br>
+                    <input type="email" id="club-signup-email" placeholder="Email" required class="input-field"><br>
+                    <input type="password" id="club-signup-password" placeholder="Password" required class="input-field"><br>
+                    <input type="file" id="club-signup-cert" accept=".pdf,.jpg,.jpeg,.png" class="input-field" required><br>
+                    <button type="submit" class="neu-btn" style="width:100%;margin-top:16px;">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="club-dashboard" class="fade-up" data-delay="0.3" style="display:none;">
+            <div class="glass-card text-center">
+                <h2>🏢 Club Dashboard</h2>
+                <div class="flex justify-center gap-32" style="margin-top:24px;">
+                    <button class="neu-btn" id="register-event-btn">📅 Register Event</button>
+                    <button class="neu-btn" id="upload-recruitment-btn">👥 Upload Recruitment</button>
+                </div>
+            </div>
+            
+            <div id="club-event-form-section" style="display:none;">
+                <div class="glass-card">
+                    <h2>📅 Register Event</h2>
+                    <form id="club-event-form">
+                        <input type="text" id="event-name" placeholder="Event Name" required class="input-field"><br>
+                        <input type="date" id="event-date" required class="input-field"><br>
+                        <input type="text" id="event-venue" placeholder="Event Venue" required class="input-field"><br>
+                        <input type="number" id="event-participants" placeholder="Past Participants No." required class="input-field"><br>
+                        <input type="text" id="event-prize" placeholder="Prize Pool" class="input-field"><br>
+                        <input type="url" id="event-reg-link" placeholder="Registration Link" class="input-field"><br>
+                        <input type="url" id="event-insta-link" placeholder="Instagram Link" class="input-field"><br>
+                        <input type="url" id="event-website-link" placeholder="Website Link" class="input-field"><br>
+                        <textarea id="event-desc" placeholder="Small Description" class="input-field" style="height:60px;"></textarea><br>
+                        <button type="submit" class="neu-btn">Submit Event</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="club-recruitment-form-section" style="display:none;">
+                <div class="glass-card">
+                    <h2>👥 Upload Recruitment</h2>
+                    <form id="club-recruitment-form">
+                        <input type="text" id="recruitment-position" placeholder="Position" required class="input-field"><br>
+                        <input type="text" id="recruitment-prereq" placeholder="Pre-requisite Knowledge" class="input-field"><br>
+                        <input type="text" id="recruitment-timeline" placeholder="Entry Timeline (e.g., 2 weeks)" class="input-field"><br>
+                        <input type="url" id="recruitment-reg-link" placeholder="Registration Link" class="input-field"><br>
+                        <input type="url" id="recruitment-website-link" placeholder="Website Link" class="input-field"><br>
+                        <input type="url" id="recruitment-social-link" placeholder="Social Media Link" class="input-field"><br>
+                        <button type="submit" class="neu-btn">Submit Recruitment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html> 

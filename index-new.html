@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Luxury College Events Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index-new.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Animated Intro Section -->
+        <section id="intro-section" class="text-center mt-64">
+            <h1 id="coev-animated" class="fade-up" data-delay="0.1">
+                CoEv
+            </h1>
+        </section>
+        
+        <!-- Mission Statement Section -->
+        <section id="mission-section" class="fade-up mt-32 text-center" data-delay="1.2" style="display:none;">
+            <div class="glass-card">
+                <h2>Your College's Luxury Event Platform</h2>
+                <p style="max-width:800px;margin:0 auto;font-size:1.2rem;line-height:1.8;">
+                    CoEv unites all club happenings in one place. Discover, plan, and participate in events effortlessly. 
+                    Clubs can showcase, students can explore—no more chaos, just seamless experiences.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Portal Boxes Section -->
+        <section id="portal-section" class="fade-up mt-64 text-center" data-delay="1.5" style="display:none;">
+            <h3 style="margin-bottom:40px;opacity:0.9;font-size:1.8rem;">Choose Your Portal</h3>
+            <div class="portal-row">
+                <div class="portal-box student-portal">
+                    <div class="portal-title">Student Portal</div>
+                    <div class="portal-actions">
+                        <button class="portal-btn" onclick="window.location.href='student.html'">Login</button>
+                        <button class="portal-btn" onclick="window.location.href='student-register.html'">Register</button>
+                    </div>
+                </div>
+                <div class="portal-box club-portal">
+                    <div class="portal-title">Club Portal</div>
+                    <div class="portal-actions">
+                        <button class="portal-btn" onclick="window.location.href='club.html'">Login</button>
+                        <button class="portal-btn" onclick="window.location.href='club-register.html'">Register</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Notice Board Section -->
+        <section id="notice-section" class="scroll-reveal mt-64" data-delay="1.8" style="display:none;">
+            <div class="glass-card text-center">
+                <h2>📢 Upcoming Events</h2>
+                <div id="notice-board">
+                    <div style="padding:24px;">
+                        <p style="opacity:0.8;margin-bottom:16px;">Latest events from our clubs</p>
+                        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+                            <div class="glass-card" style="max-width:300px;margin:8px;">
+                                <h4 style="color:#AD49E1;margin-bottom:8px;">Hackathon 2024</h4>
+                                <p style="font-size:0.9rem;opacity:0.8;">March 15, 2024</p>
+                                <p style="font-size:0.9rem;opacity:0.7;">Main Auditorium</p>
+                                <p style="font-size:0.9rem;opacity:0.6;">Tech Club</p>
+                            </div>
+                            <div class="glass-card" style="max-width:300px;margin:8px;">
+                                <h4 style="color:#FF6B6B;margin-bottom:8px;">Music Festival</h4>
+                                <p style="font-size:0.9rem;opacity:0.8;">March 20, 2024</p>
+                                <p style="font-size:0.9rem;opacity:0.7;">Open Air Theatre</p>
+                                <p style="font-size:0.9rem;opacity:0.6;">Cultural Club</p>
+                            </div>
+                            <div class="glass-card" style="max-width:300px;margin:8px;">
+                                <h4 style="color:#4ECDC4;margin-bottom:8px;">Drama Night</h4>
+                                <p style="font-size:0.9rem;opacity:0.8;">March 25, 2024</p>
+                                <p style="font-size:0.9rem;opacity:0.7;">Drama Hall</p>
+                                <p style="font-size:0.9rem;opacity:0.6;">Drama Club</p>
+                            </div>
+                        </div>
+                        <button class="neu-btn" onclick="window.location.href='events.html'" style="margin-top:24px;">
+                            View All Events
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features-section" class="scroll-reveal mt-64" data-delay="2.1" style="display:none;">
+            <h2 class="text-center mb-64">Why Choose CoEv?</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;">
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">🎯</div>
+                    <h3>Centralized Platform</h3>
+                    <p>All college events in one place. No more scattered information or missed opportunities.</p>
+                </div>
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">⚡</div>
+                    <h3>Real-time Updates</h3>
+                    <p>Stay informed with instant notifications about new events, deadlines, and updates.</p>
+                </div>
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">🎨</div>
+                    <h3>Beautiful Interface</h3>
+                    <p>Luxury design with smooth animations and intuitive navigation for the best user experience.</p>
+                </div>
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>Get personalized alerts for events you're interested in and important deadlines.</p>
+                </div>
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">📊</div>
+                    <h3>Analytics & Insights</h3>
+                    <p>Track event performance, attendance, and engagement with detailed analytics.</p>
+                </div>
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">🤝</div>
+                    <h3>Community Building</h3>
+                    <p>Connect with like-minded students and build lasting relationships through events.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Statistics Section -->
+        <section id="stats-section" class="scroll-reveal mt-64" data-delay="2.4" style="display:none;">
+            <div class="glass-card text-center">
+                <h2>CoEv Impact</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-top:32px;">
+                    <div>
+                        <h3 style="color:#AD49E1;font-size:2.5rem;margin-bottom:8px;">50+</h3>
+                        <p>Events Organized</p>
+                    </div>
+                    <div>
+                        <h3 style="color:#FF6B6B;font-size:2.5rem;margin-bottom:8px;">1000+</h3>
+                        <p>Students Engaged</p>
+                    </div>
+                    <div>
+                        <h3 style="color:#4ECDC4;font-size:2.5rem;margin-bottom:8px;">25+</h3>
+                        <p>Active Clubs</p>
+                    </div>
+                    <div>
+                        <h3 style="color:#96CEB4;font-size:2.5rem;margin-bottom:8px;">95%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact-section" class="fade-up mt-64 text-center" data-delay="2.7" style="display:none;">
+            <div class="glass-card" style="max-width:600px;margin:0 auto;">
+                <h2>📞 Contact Us</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:32px;">
+                    <div>
+                        <h4 style="color:#AD49E1;margin-bottom:8px;">Phone</h4>
+                        <p style="font-size:1.1rem;">9448463074</p>
+                    </div>
+                    <div>
+                        <h4 style="color:#AD49E1;margin-bottom:8px;">Email</h4>
+                        <p style="font-size:1.1rem;">msrakshith.0506@gmail.com</p>
+                    </div>
+                </div>
+                <p style="margin-top:24px;opacity:0.8;">
+                    For queries, suggestions, or support, reach out anytime!
+                </p>
+            </div>
+        </section>
+        
+        <!-- Footer Section -->
+        <section id="footer-section" class="fade-up mt-64 text-center" data-delay="3.0" style="display:none;">
+            <div class="glass-card" style="max-width:800px;margin:0 auto;">
+                <h3 style="margin-bottom:16px;">CoEv</h3>
+                <p style="opacity:0.8;margin-bottom:24px;">
+                    Empowering college communities through seamless event management
+                </p>
+                <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+                    <a href="events.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Events</a>
+                    <a href="calendar.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Calendar</a>
+                    <a href="recruitments.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Recruitments</a>
+                    <a href="feedback.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Feedback</a>
+                </div>
+                <p style="margin-top:24px;font-size:0.9rem;opacity:0.6;">
+                    © 2024 CoEv. All rights reserved.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-3deg); }
+            75% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        #floating-icons div:hover {
+            opacity: 0.3 !important;
+            transform: scale(1.2);
+        }
+        
+        .glass-card {
+            backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(173, 73, 225, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(173, 73, 225, 0.4);
+        }
+        
+        .neu-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .neu-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .neu-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Enhanced animations */
+        .fade-up {
+            animation: fadeUpEnhanced 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes fadeUpEnhanced {
+            0% { 
+                opacity: 0; 
+                transform: translateY(60px) scale(0.95); 
+                filter: blur(10px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+                filter: blur(0);
+            }
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .flex {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            #floating-icons {
+                display: none;
+            }
+            
+            .glass-card {
+                padding: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .neu-btn {
+                padding: 14px 32px;
+                font-size: 1.1rem;
+            }
+        }
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Canva+Sans:wght@700&display=swap');
+      /* Horizon and Norwestern font-face (assume local or CDN) */
+      @font-face {
+        font-family: 'Horizon';
+        src: url('https://fonts.cdnfonts.com/s/17309/Horizon.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Norwestern';
+        src: url('https://fonts.cdnfonts.com/s/21054/Norwestern.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+      .custom-home-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 80vh;
+        padding-top: 48px;
+      }
+      .custom-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .main-heading {
+        font-family: 'Horizon', Arial, sans-serif;
+        color: #1800ad;
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+      }
+      .subtext {
+        font-family: 'Norwestern', Arial, sans-serif;
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 32px;
+      }
+      .portal-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 60px;
+        margin-bottom: 48px;
+        width: 100%;
+        max-width: 900px;
+      }
+      .portal-box {
+        flex: 1 1 350px;
+        border-radius: 28px;
+        padding: 40px 32px 36px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 300px;
+        max-width: 400px;
+        position: relative;
+        border: 3px solid;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      }
+      .student-portal {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #667eea;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3), 0 0 0 1px rgba(102, 126, 234, 0.5);
+      }
+      .club-portal {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        border-color: #f093fb;
+        box-shadow: 0 8px 32px rgba(240, 147, 251, 0.3), 0 0 0 1px rgba(240, 147, 251, 0.5);
+      }
+      .portal-title {
+        font-family: 'Horizon', Arial, sans-serif;
+        font-size: 2.6rem;
+        color: #fff;
+        margin-bottom: 32px;
+        letter-spacing: 2px;
+        text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.2;
+      }
+      .portal-actions {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+      }
+      .portal-btn {
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(0,0,0,0.8);
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.2);
+        flex: 1;
+        max-width: 120px;
+      }
+      .portal-btn:hover {
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 6px 18px rgba(24,0,173,0.18);
+      }
+      .notice-board-panel {
+        margin-top: 32px;
+        background: rgba(255,255,255,0.13);
+        border-radius: 20px;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+        padding: 32px 24px;
+        max-width: 600px;
+        width: 100%;
+        backdrop-filter: blur(12px);
+        border: 1.5px solid rgba(255,255,255,0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .notice-title {
+        font-family: 'Horizon', Arial, sans-serif;
+        font-size: 1.6rem;
+        color: #fff;
+        margin-bottom: 18px;
+        text-align: center;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 8px rgba(24,0,173,0.10);
+      }
+      #notice-events-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      #notice-events-list li {
+        font-family: 'Montserrat', Arial, sans-serif;
+        color: #fff;
+        font-size: 1.08rem;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        padding: 8px 0 8px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      #notice-events-list li:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 900px) {
+        .portal-row {
+          flex-direction: column;
+          gap: 28px;
+          align-items: center;
+        }
+        .portal-box {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    </style>
+    <script>
+      // Dynamically load upcoming events from localStorage (as on events.html)
+      function getUpcomingEvents(maxCount = 5) {
+        let events = JSON.parse(localStorage.getItem('all_events') || '[]');
+        // Sort by date ascending, filter for future events
+        const now = new Date();
+        events = events.filter(ev => new Date(ev.date) >= now);
+        events.sort((a, b) => new Date(a.date) - new Date(b.date));
+        return events.slice(0, maxCount);
+      }
+      function renderNoticeBoard() {
+        const list = document.getElementById('notice-events-list');
+        if (!list) return;
+        const events = getUpcomingEvents();
+        if (events.length === 0) {
+          list.innerHTML = '<li>No upcoming events</li>';
+          return;
+        }
+        list.innerHTML = events.map(ev =>
+          `<li><strong>${ev.name}</strong> &mdash; <span>${ev.date}</span> @ <span>${ev.venue}</span> <span style='color:${ev.clubColor};font-weight:600;'>(${ev.club})</span></li>`
+        ).join('');
+      }
+      document.addEventListener('DOMContentLoaded', renderNoticeBoard);
+    </script>
+    <script src="assets/script.js"></script>
+</body>
+</html> 

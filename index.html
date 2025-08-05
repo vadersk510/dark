@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Luxury College Events Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Animated Intro Section -->
+        <section id="intro-section" class="text-center mt-64">
+            <h1 id="coev-animated" class="fade-up" data-delay="0.1">
+                CoEv
+            </h1>
+        </section>
+        
+        <!-- Mission Statement Section -->
+        <section id="mission-section" class="fade-up mt-32 text-center" data-delay="1.2" style="display:none;">
+            <div class="glass-card">
+                <h2>Your College's Luxury Event Platform</h2>
+                <p style="max-width:800px;margin:0 auto;font-size:1.2rem;line-height:1.8;">
+                    CoEv unites all club happenings in one place. Discover, plan, and participate in events effortlessly. 
+                    Clubs can showcase, students can explore—no more chaos, just seamless experiences.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Portal Buttons Section -->
+        <section id="portal-section" class="fade-up mt-64 text-center" data-delay="1.5" style="display:none;">
+            <h3 style="margin-bottom:32px;opacity:0.9;">Choose Your Portal</h3>
+            <div class="flex justify-center gap-32">
+                <button class="neu-btn" onclick="window.location.href='student.html'">
+                    <span style="font-size:1.4rem;">👨‍🎓</span><br>
+                    Student Portal
+                </button>
+                <button class="neu-btn" onclick="window.location.href='club.html'">
+                    <span style="font-size:1.4rem;">🏢</span><br>
+                    Club Portal
+                </button>
+            </div>
+        </section>
+        
+        <!-- Notice Board Section -->
+        <section id="notice-section" class="scroll-reveal mt-64" data-delay="1.8" style="display:none;">
+            <div class="glass-card text-center">
+                <h2>📢 Upcoming Events</h2>
+                <div id="notice-board">
+                    <div style="padding:24px;">
+                        <p style="opacity:0.8;margin-bottom:16px;">Loading upcoming events...</p>
+                        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+                            <div class="glass-card" style="max-width:300px;margin:8px;">
+                                <h4 style="color:#AD49E1;margin-bottom:8px;">Hackathon 2024</h4>
+                                <p style="font-size:0.9rem;opacity:0.8;">March 15, 2024</p>
+                                <p style="font-size:0.9rem;opacity:0.7;">Main Auditorium</p>
+                            </div>
+                            <div class="glass-card" style="max-width:300px;margin:8px;">
+                                <h4 style="color:#FF6B6B;margin-bottom:8px;">Music Festival</h4>
+                                <p style="font-size:0.9rem;opacity:0.8;">March 20, 2024</p>
+                                <p style="font-size:0.9rem;opacity:0.7;">Open Air Theatre</p>
+                            </div>
+                        </div>
+                        <button class="neu-btn" onclick="window.location.href='events.html'" style="margin-top:24px;">
+                            View All Events
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features-section" class="scroll-reveal mt-64" data-delay="2.1" style="display:none;">
+            <h2 class="text-center mb-64">Why Choose CoEv?</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;">
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">🎯</div>
+                    <h3>Centralized Platform</h3>
+                    <p>All college events in one place. No more scattered information or missed opportunities.</p>
+                </div>
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">⚡</div>
+                    <h3>Real-time Updates</h3>
+                    <p>Stay informed with instant notifications about new events, deadlines, and updates.</p>
+                </div>
+                <div class="glass-card text-center">
+                    <div style="font-size:3rem;margin-bottom:16px;">🎨</div>
+                    <h3>Beautiful Interface</h3>
+                    <p>Luxury design with smooth animations and intuitive navigation for the best user experience.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact-section" class="fade-up mt-64 text-center" data-delay="2.4" style="display:none;">
+            <div class="glass-card" style="max-width:600px;margin:0 auto;">
+                <h2>📞 Contact Us</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:32px;">
+                    <div>
+                        <h4 style="color:#AD49E1;margin-bottom:8px;">Phone</h4>
+                        <p style="font-size:1.1rem;">9448463074</p>
+                    </div>
+                    <div>
+                        <h4 style="color:#AD49E1;margin-bottom:8px;">Email</h4>
+                        <p style="font-size:1.1rem;">msrakshith.0506@gmail.com</p>
+                    </div>
+                </div>
+                <p style="margin-top:24px;opacity:0.8;">
+                    For queries, suggestions, or support, reach out anytime!
+                </p>
+            </div>
+        </section>
+        
+        <!-- Footer Section -->
+        <section id="footer-section" class="fade-up mt-64 text-center" data-delay="2.7" style="display:none;">
+            <div class="glass-card" style="max-width:800px;margin:0 auto;">
+                <h3 style="margin-bottom:16px;">CoEv</h3>
+                <p style="opacity:0.8;margin-bottom:24px;">
+                    Empowering college communities through seamless event management
+                </p>
+                <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+                    <a href="events.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Events</a>
+                    <a href="calendar.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Calendar</a>
+                    <a href="recruitments.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Recruitments</a>
+                    <a href="feedback.html" style="color:#AD49E1;text-decoration:none;opacity:0.8;transition:opacity 0.3s;">Feedback</a>
+                </div>
+                <p style="margin-top:24px;font-size:0.9rem;opacity:0.6;">
+                    © 2024 CoEv. All rights reserved.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Background Icons -->
+    <div id="floating-icons" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:hidden;">
+        <div style="position:absolute;top:10%;left:10%;font-size:2rem;opacity:0.1;animation:float 6s ease-in-out infinite;">📷</div>
+        <div style="position:absolute;top:20%;right:15%;font-size:1.5rem;opacity:0.1;animation:float 8s ease-in-out infinite 1s;">🎭</div>
+        <div style="position:absolute;top:60%;left:5%;font-size:2.5rem;opacity:0.1;animation:float 7s ease-in-out infinite 2s;">🎵</div>
+        <div style="position:absolute;top:40%;right:5%;font-size:1.8rem;opacity:0.1;animation:float 9s ease-in-out infinite 3s;">🎤</div>
+        <div style="position:absolute;top:80%;left:20%;font-size:2.2rem;opacity:0.1;animation:float 5s ease-in-out infinite 4s;">🎪</div>
+        <div style="position:absolute;top:30%;left:80%;font-size:1.6rem;opacity:0.1;animation:float 10s ease-in-out infinite 5s;">🎨</div>
+    </div>
+
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-3deg); }
+            75% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        #floating-icons div:hover {
+            opacity: 0.3 !important;
+            transform: scale(1.2);
+        }
+        
+        .glass-card {
+            backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(173, 73, 225, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(173, 73, 225, 0.4);
+        }
+        
+        .neu-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .neu-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .neu-btn:hover::before {
+            left: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .flex {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            #floating-icons {
+                display: none;
+            }
+        }
+    </style>
+
+    <script src="assets/script.js"></script>
+</body>
+</html> 

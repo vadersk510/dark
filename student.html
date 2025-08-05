@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Student Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index-new.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center fade-up" data-delay="0.1">Student Portal</h1>
+        
+        <div id="student-auth" class="fade-up" data-delay="0.2">
+            <div class="glass-card" id="student-auth-card" style="max-width:500px;margin:0 auto;">
+                <h2 id="student-auth-title" class="text-center">Student Login</h2>
+                
+                <form id="student-login-form">
+                    <input type="email" id="student-login-email" placeholder="Email" required class="input-field"><br>
+                    <input type="password" id="student-login-password" placeholder="Password" required class="input-field"><br>
+                    <button type="submit" class="neu-btn" style="width:100%;margin-top:16px;">Login</button>
+                </form>
+                
+                <div style="margin-top:24px;text-align:center;">
+                    <button id="student-toggle-btn" class="neu-btn" style="background:transparent;border:1px solid #AD49E1;color:#AD49E1;">
+                        Need an account? Sign up
+                    </button>
+                </div>
+                
+                <form id="student-signup-form" style="display:none;">
+                    <input type="text" id="student-signup-name" placeholder="Name" required class="input-field"><br>
+                    <input type="text" id="student-signup-usn" placeholder="USN" required class="input-field"><br>
+                    <input type="email" id="student-signup-email" placeholder="Email" required class="input-field"><br>
+                    <input type="password" id="student-signup-password" placeholder="Create Password" required class="input-field"><br>
+                    <input type="password" id="student-signup-confirm" placeholder="Confirm Password" required class="input-field"><br>
+                    <button type="submit" class="neu-btn" style="width:100%;margin-top:16px;">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="student-dashboard" class="fade-up" data-delay="0.3" style="display:none;">
+            <div class="glass-card">
+                <h2>📄 Upload Certificate</h2>
+                <form id="certificate-upload-form">
+                    <input type="file" id="certificate-file" accept=".pdf,.jpg,.jpeg,.png" class="input-field"><br>
+                    <button type="submit" class="neu-btn">Upload Certificate</button>
+                </form>
+            </div>
+            
+            <div class="glass-card">
+                <h2>🔔 Upcoming Events</h2>
+                <table style="width:100%;text-align:left;">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                            <th>Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-notification-table">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="glass-card">
+                <h2>📚 Event History</h2>
+                <div id="student-event-history">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html> 

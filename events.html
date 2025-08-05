@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoEv - Event Templates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CoEv</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Event Templates</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="recruitments.html">Recruitments</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+
+    <div class="container">
+        <h1 class="main-heading text-center">Event Templates</h1>
+        
+        <!-- Search and Filter Section -->
+        <div class="search-filter-section">
+            <div class="search-box">
+                <input type="text" id="event-search" placeholder="Search events..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+            <select id="event-filter-club" class="filter-select">
+                <option value="">All Clubs</option>
+            </select>
+            <select id="event-filter-type" class="filter-select">
+                <option value="">All Types</option>
+                <option value="Technical">Technical</option>
+                <option value="Non-Technical">Non-Technical</option>
+            </select>
+        </div>
+        
+        <div id="event-cards" class="event-grid center-grid">
+            <!-- Event cards will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html> 
